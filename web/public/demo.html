@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<SCRIPT src="floater_xlib.js" type=text/javascript></SCRIPT>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="">
+     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+     <meta name="generator" content="Jekyll v3.8.5">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+     <meta charset="utf-8">
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+     <title>Directory</title>
+     <meta name="description" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<SCRIPT type=text/javascript>
+
+var slideTime = 700;
+var floatAtBottom = false;
+
+function pepsi_floating_init()
+{
+	xMoveTo('floating_banner_right', 887 - (1024-screen.width), 0);
+
+	winOnResize(); // set initial position
+	xAddEventListener(window, 'resize', winOnResize, false);
+	xAddEventListener(window, 'scroll', winOnScroll, false);
+}
+function winOnResize() {
+	checkScreenWidth();
+	winOnScroll(); // initial slide
+}
+function winOnScroll() {
+  var y = xScrollTop();
+  if (floatAtBottom) {
+    y += xClientHeight() - xHeight('floating_banner_left');
+  }
+}
+
+function checkScreenWidth()
+{
+	if( document.body.clientWidth < 926 )
+	{
+		document.getElementById('floating_banner_left').style.display = 'none';
+		document.getElementById('floating_banner_right').style.display = 'none';
+	}
+	else
+	{
+		document.getElementById('floating_banner_left').style.display = '';
+		document.getElementById('floating_banner_right').style.display = '';
+	}
+}
+
+</SCRIPT>
+
+</head>
+
+<body>
+<div id="floating_banner_left" style="text-align:right; position:absolute; overflow:hidden;">
+<div id="floating_banner_left_content">
+    <a href="#" target="_blank"><img src="lien1.JPG"  style="width: 300px"/></a><br />
+</div>
+</div>
+
+
+
+<div id="floating_banner_right" style="text-align:left; position:absolute; overflow:hidden; top: 0px; right: 0px; width: 105px; border: 0px solid #000;">
+	<div id="floating_banner_right_content"  >
+    <a href="#" target="_blank"><img src="lien1.JPG" border="0" width="1005px" alt="" /></a><br />
+</div>
+</div>
+<script>
+	runQuery();
+</script>
+<script>
+	pepsi_floating_init();
+</script>
+
+</body>
+</html>
